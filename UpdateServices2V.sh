@@ -1,4 +1,4 @@
-# sudo wget -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/RolloutMania1-2023.sh | bash
+# sudo wget -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServices2V.sh | bash
 log() 
 {
     echo $(date)
