@@ -1,4 +1,4 @@
-# sudo wget -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServices_5-2023.sh | bash
+# sudo wget -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesAWS_6-2023.sh | bash
 log() 
 {
     echo $(date)
