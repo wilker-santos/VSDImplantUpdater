@@ -35,7 +35,7 @@ wget -c https://cdn.vsd.app/softwares/vs-os-interface/$VsOsInterface/vs-os-inter
 log "Download VS Autopag S.E...." 
 wget -c https://cdn.vsd.app/softwares/vs-autopag-se/$VsAutoPagSE/vs-autopag-se_$VsAutoPagSE'_amd64.deb'
 log "Download VS Food Launcher...." 
-https://github.com/wilker-santos/VSDImplantUpdater/raw/main/vs-food-launcher_$VsFoodLauncher'_amd64.deb'
+wget -c https://github.com/wilker-santos/VSDImplantUpdater/raw/main/vs-food-launcher_2.0.0_amd64.deb
 log "Download Google Chrome...." 
 wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
@@ -45,7 +45,7 @@ sudo dpkg -i vs-autopag-se_$VsAutoPagSE'_amd64.deb'
 log "Instalando VS OS Interface...."
 sudo dpkg -i vs-os-interface_$VsOsInterface'_amd64.deb'
 log "Instalando VS Food Launcher...."
-sudo dpkg -i vs-food-launcher_$VsFoodLauncher'_amd64.deb'
+sudo dpkg -i vs-food-launcher_2.0.0_amd64.deb
 log "Instalando Google Chrome...."
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
