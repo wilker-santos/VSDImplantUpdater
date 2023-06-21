@@ -64,6 +64,19 @@ echo 'Section "Device"
   Option "TearFree" "true"
 EndSection' >>/etc/X11/xorg.conf.d/20-intel.conf
 
-log "Reiniciando...."
+log "Instalação Concluida"
 echo "*****************Instalação Concluida*************************"
+log "Reiniciando...."
+echo "Reiniciando Terminal em 5..."
+sleep 1
+echo "Reiniciando Terminal em 4..."
+sleep 1
+echo "Reiniciando Terminal em 3..."
+sleep 1
+echo "Reiniciando Terminal em 2..."
+sleep 1
+echo "Reiniciando Terminal em 1..."
+sleep 1
+echo "Reiniciando Terminal em 0..."
+sleep 1
 reboot
