@@ -75,4 +75,4 @@ echo "Reiniciando Terminal em 1..."
 sleep 1
 echo "Reiniciando Terminal em 0..."
 sleep 1
-reboott
+reboot
