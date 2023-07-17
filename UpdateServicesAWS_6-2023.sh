@@ -77,6 +77,7 @@ sudo mv /opt/videosoft_bkp_log/vs-os-interface/*2023-07* /opt/videosoft/vs-os-in
 sudo mv /opt/videosoft_bkp_log/vs-os-interface/*2023-06* /opt/videosoft/vs-os-interface/log/
 sudo mv /opt/videosoft_bkp_log/vs-os-interface/*2023-05* /opt/videosoft/vs-os-interface/log/
 sudo mv /opt/videosoft_bkp_log/vs-os-interface/*2023-04* /opt/videosoft/vs-os-interface/log/
+sudo mv /opt/videosoft_bkp_log/vs-os-interface/_data* /opt/videosoft/vs-os-interface/log/
 
 sudo mv /opt/videosoft_bkp_log/vs-print/*2023-07* /opt/videosoft/vs-print/log/
 sudo mv /opt/videosoft_bkp_log/vs-print/*2023-06* /opt/videosoft/vs-print/log/
