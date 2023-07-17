@@ -29,10 +29,10 @@ sudo mkdir -p /opt/videosoft_bkp_log/vs-autopag-se/
 sudo mkdir -p /opt/videosoft_bkp_log/vs-os-interface/
 sudo mkdir -p /opt/videosoft_bkp_log/vs-print/
 
-sudo mv -v /opt/videosoft/*tar.gz /opt/videosoft_bkp_log/
-sudo mv -v /opt/videosoft/vs-autopag-se/log/ /opt/videosoft_bkp_log/vs-autopag-se/
-sudo mv -v /opt/videosoft/vs-os-interface/log/ /opt/videosoft_bkp_log/vs-os-interface/
-sudo mv -v /opt/videosoft/vs-print/log/ /opt/videosoft_bkp_log/vs-print/
+sudo mv /opt/videosoft/*tar.gz /opt/videosoft_bkp_log/
+sudo mv /opt/videosoft/vs-autopag-se/log/ /opt/videosoft_bkp_log/vs-autopag-se/
+sudo mv /opt/videosoft/vs-os-interface/log/ /opt/videosoft_bkp_log/vs-os-interface/
+sudo mv /opt/videosoft/vs-print/log/ /opt/videosoft_bkp_log/vs-print/
 
 # Error apport Ubuntu remove
 sudo rm /var/crash/*
