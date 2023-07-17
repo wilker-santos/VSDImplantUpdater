@@ -1,4 +1,4 @@
-# sudo wget -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesAWS_6-2023.sh | bash
+# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesAWS_6-2023.sh | bash
 log() 
 {
     echo $(date)
@@ -31,13 +31,13 @@ killall node
 
 # Download packages
 log "Download VS OS Interface...."
-wget -c https://cdn.vsd.app/softwares/vs-os-interface/$VsOsInterface/vs-os-interface_$VsOsInterface'_amd64.deb'
+wget --inet4-only -c https://cdn.vsd.app/softwares/vs-os-interface/$VsOsInterface/vs-os-interface_$VsOsInterface'_amd64.deb'
 log "Download VS Autopag S.E...." 
-wget -c https://cdn.vsd.app/softwares/vs-autopag-se/$VsAutoPagSE/vs-autopag-se_$VsAutoPagSE'_amd64.deb'
+wget --inet4-only -c https://cdn.vsd.app/softwares/vs-autopag-se/$VsAutoPagSE/vs-autopag-se_$VsAutoPagSE'_amd64.deb'
 log "Download VS Food Launcher...." 
-wget -c https://github.com/wilker-santos/VSDImplantUpdater/raw/main/vs-food-launcher_2.0.0_amd64.deb
+wget --inet4-only -c https://github.com/wilker-santos/VSDImplantUpdater/raw/main/vs-food-launcher_2.0.0_amd64.deb
 log "Download Google Chrome...." 
-wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 # Install packages
 log "Instalando VS Autopag S.E...."
