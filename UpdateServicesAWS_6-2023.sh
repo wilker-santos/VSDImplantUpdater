@@ -19,24 +19,24 @@ sudo ufw disable
 sudo modprobe usbcore autosuspend=-1
 sudo snap remove brave
 
+log "Parando serviços..."
+# Stop all services
+killall node
+
 # Backups
 log "Criando Backups..."
 sudo mkdir /opt/videosoft_bkp_log/vs-autopag-se/
 sudo mkdir /opt/videosoft_bkp_log/vs-os-interface/
 sudo mkdir /opt/videosoft_bkp_log/vs-print/
 
-sudo mv /opt/videosoft/*tar.gz /opt/videosoft_bkp_log/
-sudo mv /opt/videosoft/vs-autopag-se/log/ /opt/videosoft_bkp_log/vs-autopag-se/
-sudo mv /opt/videosoft/vs-os-interface/log/ /opt/videosoft_bkp_log/vs-os-interface/
-sudo mv /opt/videosoft/vs-print/log/ /opt/videosoft_bkp_log/vs-print/
+sudo mv -v /opt/videosoft/*tar.gz /opt/videosoft_bkp_log/
+sudo mv -v /opt/videosoft/vs-autopag-se/log/ /opt/videosoft_bkp_log/vs-autopag-se/
+sudo mv -v /opt/videosoft/vs-os-interface/log/ /opt/videosoft_bkp_log/vs-os-interface/
+sudo mv -v /opt/videosoft/vs-print/log/ /opt/videosoft_bkp_log/vs-print/
 
 # Error apport Ubuntu remove
 sudo rm /var/crash/*
 sudo apt remove apport apport-symptoms -y
-
-log "Parando serviços..."
-# Stop all services
-killall node
 
 # Download packages
 log "Download VS OS Interface...."
