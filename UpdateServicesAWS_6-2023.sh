@@ -18,8 +18,16 @@ sudo rm /var/lib/dpkg/lock
 sudo ufw disable
 sudo modprobe usbcore autosuspend=-1
 sudo snap remove brave
-mkdir bkp_autopag
-sudo mv /opt/videosoft/vs-autopag-se/log/ bkp_autopag/
+
+# Backups
+log "Criando Backups..."
+sudo mkdir /opt/videosoft_bkp_log/vs-autopag-se/
+sudo mkdir /opt/videosoft_bkp_log/vs-os-interface/
+sudo mkdir /opt/videosoft_bkp_log/vs-print/
+
+sudo mv /opt/videosoft/vs-autopag-se/log/ /opt/videosoft_bkp_log/vs-autopag-se/
+sudo mv /opt/videosoft/vs-os-interface/log/ /opt/videosoft_bkp_log/vs-os-interface/
+sudo mv /opt/videosoft/vs-print/log/ /opt/videosoft_bkp_log/vs-print/
 
 # Error apport Ubuntu remove
 sudo rm /var/crash/*
@@ -52,6 +60,28 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 log "Removendo arquivos temporários...."
 # Remove packages
 rm *.deb
+
+log "Restaurando Backups...."
+# Restaurar Backups
+sudo mv /opt/videosoft_bkp_log/vs-autopag-se/*2023-07* /opt/videosoft/vs-autopag-se/log/
+sudo mv /opt/videosoft_bkp_log/vs-autopag-se/*2023-06* /opt/videosoft/vs-autopag-se/log/
+sudo mv /opt/videosoft_bkp_log/vs-autopag-se/*2023-05* /opt/videosoft/vs-autopag-se/log/
+sudo mv /opt/videosoft_bkp_log/vs-autopag-se/*2023-04* /opt/videosoft/vs-autopag-se/log/
+
+sudo mv /opt/videosoft_bkp_log/vs-autopag-se/dmp/*202307* /opt/videosoft/vs-autopag-se/log/dmp/
+sudo mv /opt/videosoft_bkp_log/vs-autopag-se/dmp/*202306* /opt/videosoft/vs-autopag-se/log/dmp/
+sudo mv /opt/videosoft_bkp_log/vs-autopag-se/dmp/*202305* /opt/videosoft/vs-autopag-se/log/dmp/
+sudo mv /opt/videosoft_bkp_log/vs-autopag-se/dmp/*202304* /opt/videosoft/vs-autopag-se/log/dmp/
+
+sudo mv /opt/videosoft_bkp_log/vs-os-interface/*2023-07* /opt/videosoft/vs-os-interface/log/
+sudo mv /opt/videosoft_bkp_log/vs-os-interface/*2023-06* /opt/videosoft/vs-os-interface/log/
+sudo mv /opt/videosoft_bkp_log/vs-os-interface/*2023-05* /opt/videosoft/vs-os-interface/log/
+sudo mv /opt/videosoft_bkp_log/vs-os-interface/*2023-04* /opt/videosoft/vs-os-interface/log/
+
+sudo mv /opt/videosoft_bkp_log/vs-print/*2023-07* /opt/videosoft/vs-print/log/
+sudo mv /opt/videosoft_bkp_log/vs-print/*2023-06* /opt/videosoft/vs-print/log/
+sudo mv /opt/videosoft_bkp_log/vs-print/*2023-05* /opt/videosoft/vs-print/log/
+sudo mv /opt/videosoft_bkp_log/vs-print/*2023-04* /opt/videosoft/vs-print/log/
 
 log "Instalando Intel Graphics"
 #Install Intel Graphics
