@@ -25,9 +25,9 @@ killall node
 
 # Backups
 log "Criando Backups..."
-sudo mkdir /opt/videosoft_bkp_log/vs-autopag-se/
-sudo mkdir /opt/videosoft_bkp_log/vs-os-interface/
-sudo mkdir /opt/videosoft_bkp_log/vs-print/
+sudo mkdir /opt/videosoft_bkp_log/vs-autopag-se
+sudo mkdir /opt/videosoft_bkp_log/vs-os-interface
+sudo mkdir /opt/videosoft_bkp_log/vs-print
 
 sudo mv -v /opt/videosoft/*tar.gz /opt/videosoft_bkp_log/
 sudo mv -v /opt/videosoft/vs-autopag-se/log/ /opt/videosoft_bkp_log/vs-autopag-se/
