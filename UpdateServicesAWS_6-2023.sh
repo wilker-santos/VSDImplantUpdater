@@ -96,6 +96,10 @@ echo 'Section "Device"
   Option "TearFree" "true"
 EndSection' >>/etc/X11/xorg.conf.d/20-intel.conf
 
+# Incluindo Script Rotação no Init
+echo "xrandr --output HDMI-1 --mode 1920x1080" >>/opt/videosoft/scripts/init/rotacionar-tela.sh
+mv /opt/videosoft/scripts/init/rotacionar-tela.sh /opt/videosoft/scripts/init/
+
 log "Instalação Concluida"
 echo "*****************Instalação Concluida*************************"
 log "Reiniciando...."
