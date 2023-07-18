@@ -85,12 +85,15 @@ sudo mv /opt/videosoft_bkp_log/vs-print/log/*2023-06* /opt/videosoft/vs-print/lo
 sudo mv /opt/videosoft_bkp_log/vs-print/log/*2023-05* /opt/videosoft/vs-print/log/
 sudo mv /opt/videosoft_bkp_log/vs-print/log/*2023-04* /opt/videosoft/vs-print/log/
 
-xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-1/workspace0/last-image --set /opt/videosoft/scripts/image-install/videosoft-vertical.png
-xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-2/workspace0/last-image --set /opt/videosoft/scripts/image-install/videosoft-vertical.png
-
 log "Instalando Intel Graphics"
-#Install Intel Graphics
 sudo su
+# Incluindo Script Rotação no Init
+activescreen=$(xrandr | awk '/\ connected/ && /[[:digit:]]x[[:digit:]].*+/{print $1}')
+screen1=${stringarray[0]}
+stringarray=($activescreen)
+echo "xrandr --output {$screen1} --mode 1920x1080 --rotate right && xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitor{$screen1}/workspace0/last-image --set /opt/videosoft/scripts/image-install/videosoft-vertical.png" >>/opt/videosoft/scripts/rotacionar-tela.sh
+
+#Install Intel Graphics
 mkdir -p /etc/X11/xorg.conf.d
 touch 20-intel.conf
 echo 'Section "Device"
@@ -99,7 +102,7 @@ echo 'Section "Device"
   Option "TearFree" "true"
 EndSection' >>/etc/X11/xorg.conf.d/20-intel.conf
 
-# Incluindo Script Rotação no Init
+
 echo "xrandr --output HDMI-1 --mode 1920x1080 --rotate right" >>/opt/videosoft/scripts/rotacionar-tela.sh
 mv /opt/videosoft/scripts/rotacionar-tela.sh /opt/videosoft/scripts/init/
 
