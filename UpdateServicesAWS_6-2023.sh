@@ -85,6 +85,9 @@ sudo mv /opt/videosoft_bkp_log/vs-print/log/*2023-06* /opt/videosoft/vs-print/lo
 sudo mv /opt/videosoft_bkp_log/vs-print/log/*2023-05* /opt/videosoft/vs-print/log/
 sudo mv /opt/videosoft_bkp_log/vs-print/log/*2023-04* /opt/videosoft/vs-print/log/
 
+xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-1/workspace0/last-image --set /opt/videosoft/scripts/image-install/videosoft-vertical.png
+xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-2/workspace0/last-image --set /opt/videosoft/scripts/image-install/videosoft-vertical.png
+
 log "Instalando Intel Graphics"
 #Install Intel Graphics
 sudo su
@@ -98,9 +101,6 @@ EndSection' >>/etc/X11/xorg.conf.d/20-intel.conf
 
 # Incluindo Script Rotação no Init
 echo "xrandr --output HDMI-1 --mode 1920x1080 --rotate right" >>/opt/videosoft/scripts/rotacionar-tela.sh
-echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-1/workspace0/last-image --set /opt/videosoft/scripts/image-install/videosoft-vertical.png" >>/opt/videosoft/scripts/rotacionar-tela.sh
-echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-2/workspace0/last-image --set /opt/videosoft/scripts/image-install/videosoft-vertical.png" >>/opt/videosoft/scripts/rotacionar-tela.sh
-
 mv /opt/videosoft/scripts/rotacionar-tela.sh /opt/videosoft/scripts/init/
 
 log "Instalação Concluida"
