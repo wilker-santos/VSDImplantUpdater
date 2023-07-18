@@ -98,6 +98,9 @@ EndSection' >>/etc/X11/xorg.conf.d/20-intel.conf
 
 # Incluindo Script Rotação no Init
 echo "xrandr --output HDMI-1 --mode 1920x1080 --rotate right" >>/opt/videosoft/scripts/init/rotacionar-tela.sh
+echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-1/workspace0/last-image --set /opt/videosoft/scripts/image-install/videosoft-vertical.png" >>/opt/videosoft/scripts/init/rotacionar-tela.sh
+echo "xfconf-query --channel xfce4-desktop --property /backdrop/screen0/monitorHDMI-2/workspace0/last-image --set /opt/videosoft/scripts/image-install/videosoft-vertical.png" >>/opt/videosoft/scripts/init/rotacionar-tela.sh
+
 mv /opt/videosoft/scripts/init/rotacionar-tela.sh /opt/videosoft/scripts/init/
 
 log "Instalação Concluida"
