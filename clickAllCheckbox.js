@@ -4,3 +4,8 @@ var checkboxes = document.querySelectorAll('input[type="checkbox"]');
 checkboxes.forEach(function(checkbox) {
     checkbox.checked = true;
 });
+
+let checkboxes = document.getElementsByName('availability[]')
+checkboxes.forEach(function(checkbox) {
+    checkbox.checked = true;
+});
