@@ -1,4 +1,4 @@
-# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesAWS_6-2023.sh | bash
+# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesAWS_9-2023.sh | bash
 log() 
 {
     echo $(date)
@@ -8,7 +8,7 @@ log()
 
 # Versions
 VsOsInterface="2.22.0"
-VsAutoPagSE="2.22.7"
+VsAutoPagSE="2.22.8"
 #VsPrint="2.18.0"
 VsFoodLauncher="2.0.0"
 
