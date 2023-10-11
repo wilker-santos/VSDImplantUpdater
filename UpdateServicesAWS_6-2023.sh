@@ -57,9 +57,14 @@ sudo dpkg -i vs-food-launcher_2.0.0_amd64.deb
 log "Instalando Google Chrome...."
 sudo apt install google-chrome-beta
 
+log "Ajustando script vs-food"
+wget --inet4-only -c https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh
+sudo mv vs-food.sh /opt/videosoft/vs-food-launcher/app/vs-food.sh
+
 log "Removendo arquivos temporários...."
 # Remove packages
 rm *.deb
+rm vs-food.sh
 
 log "Restaurando Backups...."
 # Restaurar Backups
