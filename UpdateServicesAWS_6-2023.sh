@@ -18,6 +18,7 @@ sudo rm /var/lib/dpkg/lock
 sudo ufw disable
 sudo modprobe usbcore autosuspend=-1
 sudo snap remove brave
+sudo apt purge google-chrome-stable
 
 log "Parando serviços..."
 # Stop all services
@@ -45,8 +46,6 @@ log "Download VS Autopag S.E...."
 wget --inet4-only -c https://cdn.vsd.app/softwares/vs-autopag-se/$VsAutoPagSE/vs-autopag-se_$VsAutoPagSE'_amd64.deb'
 log "Download VS Food Launcher...." 
 wget --inet4-only -c https://github.com/wilker-santos/VSDImplantUpdater/raw/main/vs-food-launcher_2.0.0_amd64.deb
-log "Download Google Chrome...." 
-wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 # Install packages
 log "Instalando VS Autopag S.E...."
@@ -56,7 +55,7 @@ sudo dpkg -i vs-os-interface_$VsOsInterface'_amd64.deb'
 log "Instalando VS Food Launcher...."
 sudo dpkg -i vs-food-launcher_2.0.0_amd64.deb
 log "Instalando Google Chrome...."
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt install google-chrome-beta
 
 log "Removendo arquivos temporários...."
 # Remove packages
