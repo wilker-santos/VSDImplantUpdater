@@ -18,7 +18,7 @@ sudo rm /var/lib/dpkg/lock
 sudo ufw disable
 sudo modprobe usbcore autosuspend=-1
 sudo snap remove brave
-sudo apt purge google-chrome-stable
+sudo apt remove google-chrome-stable
 
 log "Parando serviços..."
 # Stop all services
