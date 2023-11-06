@@ -47,7 +47,7 @@ wget --inet4-only -c https://cdn.vsd.app/softwares/vs-autopag-se/$VsAutoPagSE/vs
 log "Download VS Food Launcher...." 
 wget --inet4-only -c https://github.com/wilker-santos/VSDImplantUpdater/raw/main/vs-food-launcher_2.0.0_amd64.deb
 log "Download Google Chrome Beta...."
-wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-beta_current_amd64.deb
+wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 # Install packages
 log "Instalando VS Autopag S.E...."
@@ -57,7 +57,7 @@ sudo dpkg -i vs-os-interface_$VsOsInterface'_amd64.deb'
 log "Instalando VS Food Launcher...."
 sudo dpkg -i vs-food-launcher_2.0.0_amd64.deb
 log "Instalando Google Chrome...."
-sudo dpkg -i google-chrome-beta_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 log "Ajustando script vs-food"
 wget --inet4-only -c https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh
