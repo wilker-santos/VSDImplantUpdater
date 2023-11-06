@@ -18,7 +18,7 @@ sudo rm /var/lib/dpkg/lock
 sudo ufw disable
 sudo modprobe usbcore autosuspend=-1
 sudo snap remove brave
-sudo apt remove google-chrome-stable -y
+# sudo apt remove google-chrome-stable -y
 
 log "Parando serviços..."
 # Stop all services
@@ -59,14 +59,15 @@ sudo dpkg -i vs-food-launcher_2.0.0_amd64.deb
 log "Instalando Google Chrome...."
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-log "Ajustando script vs-food"
-wget --inet4-only -c https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh
-sudo mv vs-food.sh /opt/videosoft/vs-food-launcher/app/vs-food.sh
+# IF Chrome Beta
+# log "Ajustando script vs-food"
+# wget --inet4-only -c https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh
+# sudo mv vs-food.sh /opt/videosoft/vs-food-launcher/app/vs-food.sh
 
 log "Removendo arquivos temporários...."
 # Remove packages
 rm *.deb
-rm vs-food.sh
+# rm vs-food.sh
 
 log "Restaurando Backups...."
 # Restaurar Backups
