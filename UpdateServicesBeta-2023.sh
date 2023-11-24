@@ -1,4 +1,4 @@
-# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesAWS_9-2023.sh | bash
+# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesBeta-2023.sh | bash
 log() 
 {
     echo $(date)
