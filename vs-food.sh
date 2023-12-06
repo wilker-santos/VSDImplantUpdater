@@ -20,5 +20,5 @@ PARAMS="--password-store=basic --kiosk --disable-pinch --disable-component-updat
 
 # Abre a aplicação
 echo "Abrindo a aplicação..."
-google-chrome "$VS_URL_APP" $PARAMS
+chromium "$VS_URL_APP" $PARAMS
 
