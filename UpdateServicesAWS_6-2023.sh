@@ -68,7 +68,12 @@ if [[ $cpu_model_lower == *i5* ]]; then
     log "Instalando Google Chrome...."
     sudo dpkg -i google-chrome-stable_current_amd64.deb
 elif [[ $cpu_model_lower == *i3* ]]; then
-    echo "Sou i3"
+    log "Instalando Chromium...."
+    sudo apt install chromium-browser -y
+    log "Download Script VS Food For Chromium...."
+    wget -c "https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh"
+    log "Movendo Script VS Food For Chromium...."
+    sudo mv vs-food.sh /opt/videosoft/vs-food-launcher/app/vs-food.sh
 else
     log "Download Google Chrome...."
     wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
