@@ -15,7 +15,7 @@ let sel_lay_imp = document.getElementById('entity_print_layout_id_1');
 let CUSTOM_STEP_INTEGRATING = {
   "USES_CUSTOM_ICON": "false",
   "TITLE": "Pedido realizado!",
-  "SUBTITLE": "Aguarde que estamos imprimindo sua comanda, se desejar, retire seu cupom fiscal no balcão!"
+  "SUBTITLE": "Aguarde que estamos imprimindo sua comanda\nFavor dirigir-se ao balcão de atendimento para retirada de seu cupom fiscal."
 }
 env_ws_json["CUSTOM_STEP_INTEGRATING"] = CUSTOM_STEP_INTEGRATING;
 sel_lay_imp.value = 20;
