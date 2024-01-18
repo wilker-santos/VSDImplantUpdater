@@ -68,6 +68,8 @@ if [[ $cpu_model_lower == *i5* ]]; then
     log "Instalando Google Chrome...."
     sudo dpkg -i google-chrome-stable_current_amd64.deb
 elif [[ $cpu_model_lower == *i3* ]]; then
+    log "Download Chromium...."
+    wget --inet4-only -c http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_120.0.6099.216%7elinuxmint1%2buna_amd64.deb
     log "Instalando Chromium...."
     sudo apt install chromium-browser -y
     log "Download Script VS Food For Chromium...."
