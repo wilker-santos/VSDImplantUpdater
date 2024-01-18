@@ -68,10 +68,11 @@ if [[ $cpu_model_lower == *i5* ]]; then
     log "Instalando Google Chrome...."
     sudo dpkg -i google-chrome-stable_current_amd64.deb
 elif [[ $cpu_model_lower == *i3* ]]; then
-    log "Download Chromium...."
-    wget --inet4-only -c http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_120.0.6099.216%7elinuxmint1%2buna_amd64.deb
+   # log "Download Chromium...."
+   # wget --inet4-only -c http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_120.0.6099.216%7elinuxmint1%2buna_amd64.deb
     log "Instalando Chromium...."
-    sudo dpkg -i chromium_120.0.6099.216~linuxmint1+una_amd64.deb
+    sudo apt install chromium -y
+   # sudo dpkg -i chromium_120.0.6099.216~linuxmint1+una_amd64.deb
     log "Download Script VS Food For Chromium...."
     wget -c "https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh"
     log "Movendo Script VS Food For Chromium...."
