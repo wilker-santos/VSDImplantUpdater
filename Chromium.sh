@@ -1,5 +1,5 @@
-#! /bin/bash
-# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesAlfa.sh | bash
+#!/bin/bash
+# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/Chromium.sh | bash
 # Obtém o nome do modelo da CPU usando o comando lscpu
 cpu_model=$(lscpu | grep "Nome do modelo" | cut -d ':' -f 2 | sed 's/^ *//')
 
