@@ -9,9 +9,9 @@ cpu_model_lower=$(echo "$cpu_model" | tr '[:upper:]' '[:lower:]')
 # Verifica o modelo da CPU e instala o navegador correspondente
 if [[ $cpu_model_lower == *i5* ]]; then
     log "Download Google Chrome...."
-    wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    #wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     log "Instalando Google Chrome...."
-    sudo dpkg -i google-chrome-stable_current_amd64.deb
+    #sudo dpkg -i google-chrome-stable_current_amd64.deb
     google-chrome &>/dev/null &
     sleep 5
     killall chrome
@@ -24,10 +24,10 @@ if [[ $cpu_model_lower == *i5* ]]; then
 elif [[ $cpu_model_lower == *i3* ]]; then
    # log "Download Chromium...."
    # wget --inet4-only -c http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_120.0.6099.216%7elinuxmint1%2buna_amd64.deb
-    sudo apt update
+    #sudo apt update
     log "Instalando Chromium...."
     echo "Instalando Chromium...."
-    sudo snap install chromium
+    #sudo snap install chromium
     echo "Chromium Instalado...."
    # sudo dpkg -i chromium_120.0.6099.216~linuxmint1+una_amd64.deb
     log "Download Script VS Food For Chromium...."
