@@ -12,7 +12,7 @@ if [[ $cpu_model_lower == *i5* ]]; then
     wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     log "Instalando Google Chrome...."
     sudo dpkg -i google-chrome-stable_current_amd64.deb
-    google-chrome
+    google-chrome &>/dev/null &
     sleep 5
     killall chrome
     # Nome do arquivo de configuração
@@ -34,7 +34,7 @@ elif [[ $cpu_model_lower == *i3* ]]; then
     wget -c "https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh"
     log "Movendo Script VS Food For Chromium...."
     sudo mv vs-food.sh /opt/videosoft/vs-food-launcher/app/vs-food.sh
-    chromium
+    chromium &>/dev/null &
     sleep 5
     killall chrome
     # Nome do arquivo de configuração
