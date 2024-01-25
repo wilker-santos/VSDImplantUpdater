@@ -92,7 +92,7 @@ else
     sudo dpkg -i google-chrome-stable_current_amd64.deb
     rm -r .cache/google-chrome/*
     rm -r .config/google-chrome/*
-    google-chrome &>/dev/null &
+    google-chrome --password-store=basic &>/dev/null &
     sleep 5
     killall chrome
     # Nome do arquivo de configuração
