@@ -63,7 +63,7 @@ cpu_model=$(lscpu | grep "Nome do modelo" | cut -d ':' -f 2 | sed 's/^ *//')
 cpu_model_lower=$(echo "$cpu_model" | tr '[:upper:]' '[:lower:]')
 
 # Verifica o modelo da CPU e instala o navegador correspondente
-if [[ $cpu_model_lower == *i3* ]]; then
+if [[ $cpu_model_lower == *i3-5* ]]; then
    # log "Download Chromium...."
    # wget --inet4-only -c http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_120.0.6099.216%7elinuxmint1%2buna_amd64.deb
     log "Instalando Chromium...."
