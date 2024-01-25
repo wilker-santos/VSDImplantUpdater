@@ -90,6 +90,8 @@ else
     wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     log "Instalando Google Chrome...."
     sudo dpkg -i google-chrome-stable_current_amd64.deb
+    rm -r .cache/google-chrome/*
+    rm -r .config/google-chrome/*
     google-chrome &>/dev/null &
     sleep 5
     killall chrome
