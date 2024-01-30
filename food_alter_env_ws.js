@@ -18,6 +18,7 @@ let env_ws_json = JSON.parse(env_ws.textContent);
 //  "SUBTITLE": "Aguarde que estamos imprimindo sua comanda.\nFavor dirigir-se ao balcão de atendimento para retirada de seu cupom fiscal."
 // }
 //env_ws_json["CUSTOM_STEP_INTEGRATING"] = CUSTOM_STEP_INTEGRATING;
+// Seta Layout de Impressão
 // sel_lay_imp.value = 20;
 // Converte o JSON alterado em String e atribui ao Textarea indentado
 env_ws.textContent = JSON.stringify(env_ws_json, null, 4);
