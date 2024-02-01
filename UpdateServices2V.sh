@@ -7,8 +7,8 @@ log()
 }
 
 # Versions
-VsOsInterface="2.23.0"
-VsAutoPagSE="2.24.0"
+VsOsInterface="2.23.5"
+VsAutoPagSE="2.22.8"
 VsPrint="2.21.0"
 #VsFoodLauncher="1.3.0"
 
@@ -36,8 +36,8 @@ log "Download VS Autopag S.E...."
 wget -c https://cdn.vsd.app/softwares/vs-autopag-se/$VsAutoPagSE/vs-autopag-se_$VsAutoPagSE'_amd64.deb'
 log "Download VS Print...."
 wget -c https://cdn.vsd.app/softwares/vs-print/$VsPrint/vs-print_$VsPrint'_amd64.deb'
-log "Download Google Chrome...." 
-wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# log "Download Google Chrome...." 
+# wget -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 # Install packages
 log "Instalando VS Autopag S.E...."
@@ -46,8 +46,8 @@ log "Instalando VS OS Interface...."
 sudo dpkg -i vs-os-interface_$VsOsInterface'_amd64.deb'
 log "Instalando VS Print...."
 sudo dpkg -i vs-print_$VsPrint'_amd64.deb'
-log "Instalando Google Chrome...."
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+# log "Instalando Google Chrome...."
+# sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 log "Removendo arquivos temporários...."
 # Remove packages
