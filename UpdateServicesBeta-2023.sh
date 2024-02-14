@@ -17,6 +17,7 @@ sudo rm /var/lib/dpkg/lock-frontend
 sudo rm /var/lib/dpkg/lock
 sudo ufw disable
 sudo modprobe usbcore autosuspend=-1
+sudo apt update
 # sudo snap remove brave
 # sudo apt remove google-chrome-stable -y
 
