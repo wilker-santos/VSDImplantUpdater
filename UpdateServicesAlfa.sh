@@ -80,7 +80,7 @@ if [[ $cpu_model_lower == *i3-5* ]]; then
     killall chrome
     sleep 3
     # Nome do arquivo de configuração
-    arquivo_configuracao="/home/videosoft/snap/chromium/common/chromium/Default/Preferences"
+    arquivo_configuracao="/home/videosoft/.config/chromium/Default/Preferences"
     # Adiciona o trecho no arquivo
     sed -i -E 's/"autofill":\s*\{[^\}]*"last_version_deduped":\s*120\}/"autofill":\{"last_version_deduped":120,"profile_enabled":false\}/' "$arquivo_configuracao"
     log "Desabilitado Preenchimento Automatico...."
