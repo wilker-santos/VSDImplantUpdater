@@ -8,7 +8,7 @@ log()
 
 # Versions
 VsOsInterface="2.23.5"
-VsAutoPagSE="2.22.8"
+VsAutoPagSE="2.29.0"
 #VsPrint="2.18.0"
 VsFoodLauncher="2.0.0"
 
@@ -20,6 +20,7 @@ sudo modprobe usbcore autosuspend=-1
 sudo apt update
 # sudo snap remove brave
 # sudo apt remove google-chrome-stable -y
+sudo add-apt-repository ppa:system76/pop -y
 
 log "Parando serviços..."
 # Stop all services
@@ -68,9 +69,8 @@ if [[ $cpu_model_lower == *i3-5* ]]; then
    # wget --inet4-only -c http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_120.0.6099.216%7elinuxmint1%2buna_amd64.deb
     log "Instalando Chromium...."
     echo "Instalando Chromium...."
-    sudo snap install chromium
+    sudo apt update && sudo apt install chromium
     echo "Chromium Instalado...."
-   # sudo dpkg -i chromium_120.0.6099.216~linuxmint1+una_amd64.deb
     log "Download Script VS Food For Chromium...."
     wget -c "https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh"
     log "Movendo Script VS Food For Chromium...."
