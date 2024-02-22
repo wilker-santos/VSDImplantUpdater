@@ -78,7 +78,6 @@ if [[ $cpu_model_lower == *i3-5* ]]; then
     chromium &>/dev/null &
     sleep 5
     killall chrome
-    sleep 3
     # Nome do arquivo de configuração
     arquivo_configuracao="/home/videosoft/.config/chromium/Default/Preferences"
     # Adiciona o trecho no arquivo
