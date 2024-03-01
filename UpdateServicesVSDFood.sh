@@ -20,8 +20,6 @@ sudo ufw disable
 sudo modprobe usbcore autosuspend=-1
 xfconf-query -c xfwm4 -p /general/use_compositing -s false
 sudo apt install intel-media-va-driver -y
-# sudo snap remove brave
-# sudo apt remove google-chrome-stable -y
 
 log "Parando serviços..."
 # Stop all services
