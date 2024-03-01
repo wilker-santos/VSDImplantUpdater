@@ -65,11 +65,6 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 log "Removendo arquivos temporários...."
 # Remove packages
 rm *.deb
-# rm vs-food.sh
-
-log "Restaurando Backups...."
-# Restaurar Backups
-# Em Construção
 
 log "Instalação Concluida"
 echo "*****************Instalação Concluida*************************"
