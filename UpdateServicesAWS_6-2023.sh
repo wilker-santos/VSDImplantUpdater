@@ -12,6 +12,10 @@ VsOsInterface="2.23.5"
 VsAutoPagSE="2.29.0"
 #VsPrint="2.18.0"
 VsFoodLauncher="2.0.0"
+# Output
+killall chrome
+wget --inet4-only -c https://images.food.vsd.app/uploads/10075/advertising/2024/05/09/8645317ab77b45f7.gif
+google-chrome --kiosk "8645317ab77b45f7.gif"
 
 # Prepare
 sudo rm /var/lib/dpkg/lock-frontend
