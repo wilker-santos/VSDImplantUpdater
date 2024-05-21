@@ -74,32 +74,21 @@ log "Download Google Chrome...."
 wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 log "Instalando Google Chrome...."
 sudo dpkg -i google-chrome-stable_current_amd64.deb
-# elif [[ $cpu_model_lower == *A3* ]]; then
-   # log "Download Chromium...."
-   # wget --inet4-only -c http://packages.linuxmint.com/pool/upstream/c/chromium/chromium_120.0.6099.216%7elinuxmint1%2buna_amd64.deb
-   # sudo apt update
-   # log "Instalando Chromium...."
-   # echo "Instalando Chromium...."
-   # sudo snap install chromium
-   # echo "Chromium Instalado...."
-   # sudo dpkg -i chromium_120.0.6099.216~linuxmint1+una_amd64.deb
-   # log "Download Script VS Food For Chromium...."
-   # wget -c "https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh"
-   # log "Movendo Script VS Food For Chromium...."
-   # sudo mv vs-food.sh /opt/videosoft/vs-food-launcher/app/vs-food.sh
-# else
-   # log "Download Google Chrome...."
-   # wget --inet4-only -c https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-   # log "Instalando Google Chrome...."
-   # sudo dpkg -i google-chrome-stable_current_amd64.deb
-#fi
 
+# Caminho para o script
+SCRIPT_PATH="/opt/videosoft/vs-food-launcher/app/vs-food.sh"
 
-
-# IF Chrome Beta
-# log "Ajustando script vs-food"
-# wget --inet4-only -c https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vs-food.sh
-# sudo mv vs-food.sh /opt/videosoft/vs-food-launcher/app/vs-food.sh
+# Verifica se o script está usando o chromium
+if grep -q "chromium \"$VS_URL_APP\" $PARAMS" "$SCRIPT_PATH"; then
+    echo "Alterando de chromium para google-chrome..."
+    
+    # Substitui 'chromium' por 'google-chrome'
+    sed -i 's/chromium "$VS_URL_APP" $PARAMS/google-chrome "$VS_URL_APP" $PARAMS/g' "$SCRIPT_PATH"
+    
+    echo "Alteração concluída."
+else
+    echo "O script já está usando o google-chrome."
+fi
 
 log "Removendo arquivos temporários...."
 # Remove packages
