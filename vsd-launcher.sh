@@ -34,7 +34,7 @@ function update_url() {
     fi
 
     # Atualização do arquivo vs-food.sh com a nova URL
-    sed -i "s|^VS_URL_APP=.*|VS_URL_APP=\"$new_url\"|" /opt/videosoft/vs-food-launcher/app/vs-food.sh
+    sudo sed -i "s|^VS_URL_APP=.*|VS_URL_APP=\"$new_url\"|" /opt/videosoft/vs-food-launcher/app/vs-food.sh
 
     echo "URL atualizada para: $new_url"
 }
