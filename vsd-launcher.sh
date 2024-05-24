@@ -3,19 +3,19 @@
 
 # Função para exibir a ajuda
 function display_help() {
-    echo "Uso: vsd-launcher -s <service> [-v <version>]"
+    echo "Uso: vsd-launcher -s <software> [-v <version>]"
     echo
     echo "Opções:"
-    echo "  -s <service>   Nome do serviço (ex: 'food', 'self')"
-    echo "  -v <version>   Versão do serviço (aplicável apenas para o serviço 'food')"
+    echo "  -s <software>   Nome do software (ex: 'food', 'self')"
+    echo "  -v <version>   Versão do software (aplicável apenas para o software 'food')"
     echo
     echo "Exemplos:"
     echo "  vsd-launcher -s food -v 2       Atualiza a URL para 'https://food2.vsd.app'"
     echo "  vsd-launcher -s food            Atualiza a URL para 'https://food.vsd.app'"
     echo "  vsd-launcher -s self            Atualiza a URL para 'https://selfcheckout.vsd.app'"
     echo
-    echo "Se o serviço for 'food' e a versão não for especificada, a versão padrão será usada."
-    echo "Para mais informações, consulte a documentação ou entre em contato com o suporte."
+    echo "Se o software for 'food' e a versão não for especificada, a versão padrão será usada."
+    echo "Para mais informações, consulte a documentação ou entre em contato com o Wilker Santos."
 }
 
 # Função para exibir a URL conforme os parâmetros fornecidos e atualizar o script
