@@ -1,5 +1,23 @@
 #!/bin/bash
 # wget https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/vsd-launcher.sh -O vsd-launcher && sudo chmod 755 vsd-launcher && sudo mv vsd-launcher /usr/bin/
+
+# Função para exibir a ajuda
+function display_help() {
+    echo "Uso: vsd-launcher -s <service> [-v <version>]"
+    echo
+    echo "Opções:"
+    echo "  -s <service>   Nome do serviço (ex: 'food', 'self')"
+    echo "  -v <version>   Versão do serviço (aplicável apenas para o serviço 'food')"
+    echo
+    echo "Exemplos:"
+    echo "  vsd-launcher -s food -v 2       Atualiza a URL para 'https://food2.vsd.app'"
+    echo "  vsd-launcher -s food            Atualiza a URL para 'https://food.vsd.app'"
+    echo "  vsd-launcher -s self            Atualiza a URL para 'https://selfcheckout.vsd.app'"
+    echo
+    echo "Se o serviço for 'food' e a versão não for especificada, a versão padrão será usada."
+    echo "Para mais informações, consulte a documentação ou entre em contato com o suporte."
+}
+
 # Função para exibir a URL conforme os parâmetros fornecidos e atualizar o script
 function update_url() {
     local service=""
@@ -7,12 +25,13 @@ function update_url() {
     local new_url=""
 
     # Parse dos parâmetros
-    while getopts "s:v:" opt; do
+    while getopts "s:v:h" opt; do
         case $opt in
             s) service=$OPTARG ;;
             v) version=$OPTARG ;;
-            \?) echo "Opção inválida: -$OPTARG" >&2; exit 1 ;;
-            :) echo "Opção -$OPTARG requer um argumento." >&2; exit 1 ;;
+            h) display_help; exit 0 ;;
+            \?) echo "Opção inválida: -$OPTARG" >&2; display_help; exit 1 ;;
+            :) echo "Opção -$OPTARG requer um argumento." >&2; display_help; exit 1 ;;
         esac
     done
 
@@ -38,6 +57,12 @@ function update_url() {
 
     echo "URL atualizada para: $new_url"
 }
+
+# Verifica se nenhum parâmetro foi passado e exibe a ajuda
+if [ $# -eq 0 ]; then
+    display_help
+    exit 0
+fi
 
 # Chamada da função com os parâmetros passados para o script
 update_url "$@"
