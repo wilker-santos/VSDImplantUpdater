@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# sudo wget -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/alter-chromium.sh | bash
 # Caminho para o script
 SCRIPT_PATH="/opt/videosoft/vs-food-launcher/app/vs-food.sh"
 
