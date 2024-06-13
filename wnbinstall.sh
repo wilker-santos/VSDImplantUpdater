@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesAWS_6-2023.sh | bash
 
 #Define Dependencies to upgrade
 
