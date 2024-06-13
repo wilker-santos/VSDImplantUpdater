@@ -1,5 +1,5 @@
 #!/bin/bash
-# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/wnbinstall.sh | bash
+# wget --inet4-only https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/wnbinstall.sh
 
 #Define Dependencies to upgrade
 
