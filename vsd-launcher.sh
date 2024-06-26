@@ -3,16 +3,20 @@
 
 # Função para exibir a ajuda
 function display_help() {
-    echo "Uso: vsd-launcher -s <software> [-v <version>]"
+    echo "Uso: vsd-launcher -s <software> [-v <version>] [--clear-cache] [--clear-token]"
     echo
     echo "Opções:"
     echo "  -s <software>   Nome do software (ex: 'food', 'self')"
     echo "  -v <version>   Versão do software (aplicável apenas para o software 'food')"
+    echo "  --clear-cache  Limpa o cache do Google Chrome"
+    echo "  --clear-token  Limpa o token e cache do Google Chrome"
     echo
     echo "Exemplos:"
     echo "  vsd-launcher -s food -v 2       Atualiza a URL para 'https://food2.vsd.app'"
     echo "  vsd-launcher -s food            Atualiza a URL para 'https://food.vsd.app'"
     echo "  vsd-launcher -s self            Atualiza a URL para 'https://selfcheckout.vsd.app'"
+    echo "  vsd-launcher --clear-cache      Limpa o cache do Google Chrome"
+    echo "  vsd-launcher --clear-token      Limpa o token e cache do Google Chrome"
     echo
     echo "Se o software for 'food' e a versão não for especificada, a versão padrão será usada."
     echo "Para mais informações, consulte a documentação ou entre em contato com o Wilker Santos."
@@ -58,11 +62,40 @@ function update_url() {
     echo "URL atualizada para: $new_url"
 }
 
+# Função para limpar o cache do Google Chrome
+function clear_cache() {
+    rm -r .cache/google-chrome/*
+    rm -r .config/google-chrome/*
+    echo "Cache do Google Chrome limpo."
+}
+
+# Função para limpar o token e cache do Google Chrome
+function clear_token() {
+    rm -r .cache/google-chrome/*
+    rm -r .config/google-chrome/*
+    sudo rm -f /opt/videosoft/vs-os-interface/log/_database*
+    echo "Token e cache do Google Chrome limpos."
+}
+
 # Verifica se nenhum parâmetro foi passado e exibe a ajuda
 if [ $# -eq 0 ]; then
     display_help
     exit 0
 fi
+
+# Parse dos parâmetros para as novas opções
+for arg in "$@"; do
+    case $arg in
+        --clear-cache)
+        clear_cache
+        shift
+        ;;
+        --clear-token)
+        clear_token
+        shift
+        ;;
+    esac
+done
 
 # Chamada da função com os parâmetros passados para o script
 update_url "$@"
