@@ -1,5 +1,5 @@
 #!/bin/bash
-# wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/InstallAnyDesk.sh | bash
+# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/InstallAnyDesk.sh | bash
 
 # URL da página HTML
 url="https://download.anydesk.com/linux/"
