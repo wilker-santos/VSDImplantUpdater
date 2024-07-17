@@ -15,6 +15,9 @@ function display_help() {
     echo "  vsd-launcher -s food -v 2       Atualiza a URL para 'https://food2.vsd.app'"
     echo "  vsd-launcher -s food            Atualiza a URL para 'https://food.vsd.app'"
     echo "  vsd-launcher -s self            Atualiza a URL para 'https://selfcheckout.vsd.app'"
+    echo "  vsd-launcher -s food -v 2 --homolog  Atualiza a URL para 'https://food2.homolog.vsd.app'"
+    echo "  vsd-launcher -s food --homolog        Atualiza a URL para 'https://food.homolog.vsd.app'"
+    echo "  vsd-launcher -s self --homolog        Atualiza a URL para 'https://selfcheckout.homolog.vsd.app'"
     echo "  vsd-launcher --clear-cache      Limpa o cache do Google Chrome"
     echo "  vsd-launcher --clear-token      Limpa o token e cache do Google Chrome"
     echo
@@ -26,14 +29,16 @@ function display_help() {
 function update_url() {
     local service=""
     local version=""
+    local homolog=false
     local new_url=""
 
     # Parse dos parâmetros
-    while getopts "s:v:h" opt; do
+    while getopts "s:v:h--homolog" opt; do
         case $opt in
             s) service=$OPTARG ;;
             v) version=$OPTARG ;;
             h) display_help; exit 0 ;;
+            --homolog) homolog=true ;;
             \?) echo "Opção inválida: -$OPTARG" >&2; display_help; exit 1 ;;
             :) echo "Opção -$OPTARG requer um argumento." >&2; display_help; exit 1 ;;
         esac
@@ -42,15 +47,27 @@ function update_url() {
     # Construção da URL com base nos parâmetros
     if [ "$service" == "food" ]; then
         if [ "$version" == "2" ]; then
-            new_url="https://food2.vsd.app"
+            if [ "$homolog" = true ]; then
+                new_url="https://food2.homolog.vsd.app"
+            else
+                new_url="https://food2.vsd.app"
+            fi
         elif [ "$version" == "3" ] || [ -z "$version" ]; then
-            new_url="https://food.vsd.app"
+            if [ "$homolog" = true ]; then
+                new_url="https://food.homolog.vsd.app"
+            else
+                new_url="https://food.vsd.app"
+            fi
         else
             echo "Versão desconhecida para o serviço 'food'." >&2
             exit 1
         fi
     elif [ "$service" == "self" ]; then
-        new_url="https://selfcheckout.vsd.app"
+        if [ "$homolog" = true ]; then
+            new_url="https://selfcheckout.homolog.vsd.app"
+        else
+            new_url="https://selfcheckout.vsd.app"
+        fi
     else
         echo "Serviço desconhecido." >&2
         exit 1
@@ -92,6 +109,10 @@ for arg in "$@"; do
         ;;
         --clear-token)
         clear_token
+        shift
+        ;;
+        --homolog)
+        homolog=true
         shift
         ;;
     esac
