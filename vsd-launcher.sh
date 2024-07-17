@@ -3,23 +3,24 @@
 
 # Função para exibir a ajuda
 function display_help() {
-    echo "Uso: vsd-launcher -s <software> [-v <version>] [--clear-cache] [--clear-token]"
+    echo "Uso: vsd-launcher -s <software> [-v <version>] [--homolog] [--clear-cache] [--clear-token]"
     echo
     echo "Opções:"
     echo "  -s <software>   Nome do software (ex: 'food', 'self')"
-    echo "  -v <version>   Versão do software (aplicável apenas para o software 'food')"
-    echo "  --clear-cache  Limpa o cache do Google Chrome"
-    echo "  --clear-token  Limpa o token e cache do Google Chrome"
+    echo "  -v <version>    Versão do software (aplicável apenas para o software 'food')"
+    echo "  --homolog       Usa a URL de homologação"
+    echo "  --clear-cache   Limpa o cache do Google Chrome"
+    echo "  --clear-token   Limpa o token e cache do Google Chrome"
     echo
     echo "Exemplos:"
-    echo "  vsd-launcher -s food -v 2       Atualiza a URL para 'https://food2.vsd.app'"
-    echo "  vsd-launcher -s food            Atualiza a URL para 'https://food.vsd.app'"
-    echo "  vsd-launcher -s self            Atualiza a URL para 'https://selfcheckout.vsd.app'"
-    echo "  vsd-launcher -s food -v 2 --homolog  Atualiza a URL para 'https://food2.homolog.vsd.app'"
-    echo "  vsd-launcher -s food --homolog        Atualiza a URL para 'https://food.homolog.vsd.app'"
-    echo "  vsd-launcher -s self --homolog        Atualiza a URL para 'https://selfcheckout.homolog.vsd.app'"
-    echo "  vsd-launcher --clear-cache      Limpa o cache do Google Chrome"
-    echo "  vsd-launcher --clear-token      Limpa o token e cache do Google Chrome"
+    echo "  vsd-launcher -s food -v 2              Atualiza a URL para 'https://food2.vsd.app'"
+    echo "  vsd-launcher -s food                   Atualiza a URL para 'https://food.vsd.app'"
+    echo "  vsd-launcher -s self                   Atualiza a URL para 'https://selfcheckout.vsd.app'"
+    echo "  vsd-launcher -s food -v 2 --homolog    Atualiza a URL para 'https://food2.homolog.vsd.app'"
+    echo "  vsd-launcher -s food --homolog         Atualiza a URL para 'https://food.homolog.vsd.app'"
+    echo "  vsd-launcher -s self --homolog         Atualiza a URL para 'https://selfcheckout.homolog.vsd.app'"
+    echo "  vsd-launcher --clear-cache             Limpa o cache do Google Chrome"
+    echo "  vsd-launcher --clear-token             Limpa o token e cache do Google Chrome"
     echo
     echo "Se o software for 'food' e a versão não for especificada, a versão padrão será usada."
     echo "Para mais informações, consulte a documentação ou entre em contato com o Wilker Santos."
@@ -33,14 +34,39 @@ function update_url() {
     local new_url=""
 
     # Parse dos parâmetros
-    while getopts "s:v:h--homolog" opt; do
-        case $opt in
-            s) service=$OPTARG ;;
-            v) version=$OPTARG ;;
-            h) display_help; exit 0 ;;
-            --homolog) homolog=true ;;
-            \?) echo "Opção inválida: -$OPTARG" >&2; display_help; exit 1 ;;
-            :) echo "Opção -$OPTARG requer um argumento." >&2; display_help; exit 1 ;;
+    while [[ $# -gt 0 ]]; do
+        case $1 in
+            -s)
+                service=$2
+                shift
+                shift
+                ;;
+            -v)
+                version=$2
+                shift
+                shift
+                ;;
+            --homolog)
+                homolog=true
+                shift
+                ;;
+            -h|--help)
+                display_help
+                exit 0
+                ;;
+            --clear-cache)
+                clear_cache
+                shift
+                ;;
+            --clear-token)
+                clear_token
+                shift
+                ;;
+            *)
+                echo "Opção inválida: $1" >&2
+                display_help
+                exit 1
+                ;;
         esac
     done
 
@@ -99,24 +125,6 @@ if [ $# -eq 0 ]; then
     display_help
     exit 0
 fi
-
-# Parse dos parâmetros para as novas opções
-for arg in "$@"; do
-    case $arg in
-        --clear-cache)
-        clear_cache
-        shift
-        ;;
-        --clear-token)
-        clear_token
-        shift
-        ;;
-        --homolog)
-        homolog=true
-        shift
-        ;;
-    esac
-done
 
 # Chamada da função com os parâmetros passados para o script
 update_url "$@"
