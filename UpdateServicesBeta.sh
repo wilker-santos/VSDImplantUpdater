@@ -8,8 +8,10 @@ log()
 }
 
 # Versions
-VsOsInterface="2.23.5"
-VsAutoPagSE="2.32.2"
+echo "Digite a versão do VSD OS Interface que você deseja instalar:"
+read VsOsInterface
+echo "Digite a versão do VSD Autopag SE que você deseja instalar:"
+read VsAutoPagSE
 #VsPrint="2.18.0"
 VsFoodLauncher="2.0.0"
 # Output
