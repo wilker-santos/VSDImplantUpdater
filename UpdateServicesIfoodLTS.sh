@@ -1,5 +1,5 @@
 #!/bin/bash
-# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesLTS.sh | bash
+# sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/UpdateServicesIfoodLTS.sh | bash
 log() 
 {
     echo $(date)
