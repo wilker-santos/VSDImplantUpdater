@@ -11,6 +11,7 @@ log()
 VsOsInterface="2.24.0"
 VsdPayment="1.1.0"
 VsFoodLauncher="2.0.0"
+PinpadServer="3.7.5"
 
 # Output
 killall chrome
@@ -41,6 +42,9 @@ sudo mv /opt/videosoft/*tar.gz /opt/videosoft_bkp_log/
 sudo mv /opt/vsd-payment/log/ /opt/videosoft_bkp_log/vsd-payment/
 sudo mv /opt/videosoft/vs-os-interface/log/ /opt/videosoft_bkp_log/vs-os-interface/
 
+# Remove Packages
+sudo apt purge vsd-payment -y
+sudo apt purge pinpad-server -y
 # Error apport Ubuntu remove
 sudo rm /var/crash/*
 sudo apt remove apport apport-symptoms -y
@@ -52,8 +56,12 @@ log "Download VSD Payment...."
 wget --inet4-only -c https://cdn.vsd.app/softwares/vsd-payment/prod/vsd-payment_$VsdPayment'_amd64.deb'
 log "Download VS Food Launcher...." 
 wget --inet4-only -c https://github.com/wilker-santos/VSDImplantUpdater/raw/main/vs-food-launcher_2.0.0_amd64.deb
+log "Download Pinpad Server...." 
+wget --inet4-only -c https://github.com/getzoop/zoop-package-public/releases/download/zoop-desktop-$PinpadServer/pinpad-server-installer_linux_$PinpadServer.deb
 
 # Install packages
+log "Instalando Pinpad Server...."
+sudo dpkg -i pinpad-server-installer_linux_$PinpadServer.deb
 log "Instalando VSD Payment...."
 sudo dpkg -i vsd-payment_$VsdPayment'_amd64.deb'
 log "Instalando VS OS Interface...."
