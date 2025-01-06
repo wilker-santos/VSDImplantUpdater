@@ -57,7 +57,7 @@ wget --inet4-only -c https://cdn.vsd.app/softwares/vsd-payment/prod/vsd-payment_
 log "Download VS Food Launcher...." 
 wget --inet4-only -c https://github.com/wilker-santos/VSDImplantUpdater/raw/main/vs-food-launcher_2.0.0_amd64.deb
 log "Download Pinpad Server...." 
-wget --inet4-only -c https://github.com/getzoop/zoop-package-public/releases/download/zoop-desktop-$PinpadServer/pinpad-server-installer_linux_$PinpadServer.deb
+wget --inet4-only -c https://github.com/getzoop/zoop-package-public/releases/download/zoop-desktop_$PinpadServer/pinpad-server-installer_linux_$PinpadServer.deb
 
 # Install packages
 log "Instalando Pinpad Server...."
