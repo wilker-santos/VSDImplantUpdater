@@ -25,8 +25,8 @@ sudo ufw disable
 sudo modprobe usbcore autosuspend=-1
 xfconf-query -c xfwm4 -p /general/use_compositing -s false
 sudo apt install intel-media-va-driver -y
-sudo apt purge vs-print
-sudo apt purge vs-autopag-se
+sudo apt remove vs-print
+sudo apt remove vs-autopag-se
 
 log "Parando serviços..."
 # Stop all services
