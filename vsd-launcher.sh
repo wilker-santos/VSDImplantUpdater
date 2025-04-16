@@ -117,6 +117,7 @@ function clear_token() {
     rm -r .cache/google-chrome/*
     rm -r .config/google-chrome/*
     sudo rm -f /opt/videosoft/vs-os-interface/log/_database_token*
+    sudo rm -f /opt/videosoft/vs-os-interface/log/_database_recovery*
     echo "Token e cache do Google Chrome limpos."
 }
 
