@@ -9,7 +9,7 @@ log()
 
 # Versions
 VsOsInterface="2.28.2"
-VsdPayment="1.4.0"
+VsdPayment="1.2.1"
 VsFoodLauncher="2.0.0"
 PinpadServer="3.11.0"
 
