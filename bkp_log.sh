@@ -7,7 +7,7 @@ DEST_DIR="/opt/videosoft/"
 DIAS=90
 
 # Nome do arquivo final (inclui data)
-ARQ_DEST="$DEST_DIR/$DEST_DIR_$(date +%Y-%m-%d).tar.gz"
+ARQ_DEST="$DEST_DIR/vs-os-interface_$(date +%Y-%m-%d).tar.gz"
 
 # Cria diretório de destino se não existir
 mkdir -p "$DEST_DIR"
