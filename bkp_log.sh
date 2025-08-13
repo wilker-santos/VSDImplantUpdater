@@ -1,6 +1,6 @@
 #!/bin/bash
 # sudo wget --inet4-only -O- https://raw.githubusercontent.com/wilker-santos/VSDImplantUpdater/main/bkp_log.sh | bash
-
+sudo su
 # Diretórios
 LOG_DIR="/opt/videosoft/vs-os-interface/log"
 DEST_DIR="/opt/videosoft/"
